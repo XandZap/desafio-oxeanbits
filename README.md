@@ -57,17 +57,15 @@ Isso iniciará o servidor de desenvolvimento e abrirá o aplicativo no seu naveg
 ## Scripts Disponíveis
 Além do script start, o projeto também inclui os seguintes scripts:
 
+Cria uma versão de produção do aplicativo.:
 ```
 npm run build
 ```
-: Cria uma versão de produção do aplicativo.
-
+Executa os testes do projeto.:
 ```
 npm run test
 ```
-: Executa os testes do projeto.
-
+Ejeta o projeto do ambiente create-react-app. Este é um comando irreversível.:
 ```
 npm run eject
 ```
-: Ejeta o projeto do ambiente create-react-app. Este é um comando irreversível.
