@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Projeto Oxeanbits Desafio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Pré-requisitos
+Antes de começar, certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
-## Available Scripts
+## Clonando o Projeto
+Para clonar o projeto, abra o terminal e execute o seguinte comando:
 
-In the project directory, you can run:
+```git clone https://github.com/XandZap/desafio-oxeanbits.git```
 
-### `npm start`
+Isso criará uma cópia do repositório em sua máquina local.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalando as Dependências
+Navegue até o diretório do projeto usando o terminal:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```cd desafio-oxeanbits```
 
-### `npm test`
+Em seguida, instale as dependências do projeto com o seguinte comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```npm install```
 
-### `npm run build`
+Este comando instalará todas as dependências listadas no arquivo package.json.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configurando as Variáveis de Ambiente
+As variáveis de ambiente são usadas para armazenar informações sensíveis do projeto, como chaves de API. No projeto Oxeanbits, usamos o arquivo .env para armazenar essas informações.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Crie um arquivo .env: 
+Abra o terminal, navegue até a raiz do seu projeto e crie um arquivo chamado .env usando o comando touch.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```touch .env```
 
-### `npm run eject`
+Em seguida, abra este arquivo em um editor de texto e defina suas variáveis de ambiente. 
+As variáveis devem começar com REACT_APP_ para serem lidas pelo Create React App. Cole essas variáveis no seu arquivo .env:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+REACT_APP_API_GIPHY_KEY=DPo7WGQoYASlVvciGiGZ7P2fXzJLEfud
+REACT_APP_API_BASE_URL=https://api.giphy.com/v1/gifs/
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Iniciando o Projeto
+Depois de instalar as dependências e configurar as variáveis de ambiente, você pode iniciar o projeto com o seguinte comando:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```npm start```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Isso iniciará o servidor de desenvolvimento e abrirá o aplicativo no seu navegador padrão.
 
-## Learn More
+## Scripts Disponíveis
+Além do script start, o projeto também inclui os seguintes scripts:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```npm run build```: Cria uma versão de produção do aplicativo.
+```npm run test```: Executa os testes do projeto.
+```npm run eject```: Ejeta o projeto do ambiente create-react-app. Este é um comando irreversível.
