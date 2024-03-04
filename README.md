@@ -30,7 +30,7 @@ Abra o terminal, navegue até a raiz do seu projeto e crie um arquivo chamado .e
 ```touch .env```
 
 Em seguida, abra este arquivo em um editor de texto e defina suas variáveis de ambiente. 
-As variáveis devem começar com REACT_APP_ para serem lidas pelo Create React App. Cole essas variáveis no seu arquivo .env:
+As variáveis devem começar com REACT_APP_ para serem lidas pelo React App. Cole essas variáveis no seu arquivo .env:
 
 ```
 REACT_APP_API_GIPHY_KEY=DPo7WGQoYASlVvciGiGZ7P2fXzJLEfud
@@ -43,6 +43,11 @@ Depois de instalar as dependências e configurar as variáveis de ambiente, voc�
 ```npm start```
 
 Isso iniciará o servidor de desenvolvimento e abrirá o aplicativo no seu navegador padrão.
+
+## Testando o Projeto
+Para executar os testes você pode usar o seguinte comando:
+
+```npm run test```
 
 ## Scripts Disponíveis
 Além do script start, o projeto também inclui os seguintes scripts:

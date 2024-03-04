@@ -18,7 +18,7 @@ export function GridContainer({ trendingData }: GridContainerProps) {
   const [page, setPage] = useState<PageState>(initialDataState);
   const [pageSizeValue, setPageSizeValue] = useState<number | string | undefined>();
 
-  const pageChange = (event: GridPageChangeEvent) => {
+  const handlePageChange = (event: GridPageChangeEvent) => {
     const targetEvent = event.targetEvent as PagerTargetEvent;
     const take = targetEvent.value === "All" ? trendingData.length : event.page.take;
 
@@ -45,23 +45,24 @@ export function GridContainer({ trendingData }: GridContainerProps) {
     return setFilter(e.filter);
   };
 
+  const filteredData = filterBy(trendingData.slice(page.skip, page.take + page.skip), filter);
+
   return (
     <Grid
       style={{ height: "600px" }}
       scrollable="scrollable"
-      data={filterBy(trendingData.slice(page.skip, page.take + page.skip), filter)}
+      data={filteredData}
       filterable={true}
       filter={filter}
       onFilterChange={handleFilterChange}
-      skip={page.skip}
-      take={page.take}
       total={trendingData.length}
       pageable={{
         buttonCount: 3,
         pageSizes: [5, 10, 15, "All"],
         pageSizeValue: pageSizeValue,
       }}
-      onPageChange={pageChange}
+      onPageChange={handlePageChange}
+      {...page}
     >
       {columns.map((column, index) => (
         <Column {...column} key={index} />

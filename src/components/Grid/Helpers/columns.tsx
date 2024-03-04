@@ -4,14 +4,17 @@ export const columns: GridColumnProps[] = [
   {
     field: "id",
     title: "ID",
+    filterTitle: "id",
   },
   {
     field: "title",
     title: "Title",
+    filterTitle: "title",
   },
   {
     field: "username",
     title: "User",
+    filterTitle: "username",
   },
   {
     title: "GIF",
@@ -21,3 +24,4 @@ export const columns: GridColumnProps[] = [
     filterable: false,
   },
 ];
+
