@@ -1,6 +1,11 @@
 import { filterBy } from "@progress/kendo-data-query";
 import { PagerTargetEvent } from "@progress/kendo-react-data-tools";
-import { GridColumn as Column, Grid, GridPageChangeEvent } from "@progress/kendo-react-grid";
+import {
+  GridColumn as Column,
+  Grid,
+  GridFilterChangeEvent,
+  GridPageChangeEvent,
+} from "@progress/kendo-react-grid";
 import "@progress/kendo-theme-default/dist/all.css";
 import { useState } from "react";
 import { GridContainerProps, PageState } from "../../@types/GridContainer";
@@ -26,6 +31,20 @@ export function GridContainer({ trendingData }: GridContainerProps) {
     });
   };
 
+  const handleFilterChange = (e: GridFilterChangeEvent) => {
+    e.filter?.filters.length > 0
+      ? setPage({
+          ...page,
+          take: trendingData.length,
+        })
+      : setPage({
+          ...page,
+          take: 5,
+        });
+
+    return setFilter(e.filter);
+  };
+
   return (
     <Grid
       style={{ height: "600px" }}
@@ -33,7 +52,7 @@ export function GridContainer({ trendingData }: GridContainerProps) {
       data={filterBy(trendingData.slice(page.skip, page.take + page.skip), filter)}
       filterable={true}
       filter={filter}
-      onFilterChange={(e) => setFilter(e.filter)}
+      onFilterChange={handleFilterChange}
       skip={page.skip}
       take={page.take}
       total={trendingData.length}
